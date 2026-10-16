@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Shop</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animated background -->
+    <div class="bg" aria-hidden="true">
+        <span>🛍️</span><span>👜</span><span>🕯️</span><span>☕</span>
+        <span>🕶️</span><span>👒</span><span>🎒</span><span>🧣</span>
+        <span>🛋️</span><span>🎁</span>
+    </div>
+
+    <h1>My Online Shop</h1>
+
+    <div id="filters">
+        <button data-cat="all" class="active">All</button>
+        <button data-cat="home">Home</button>
+        <button data-cat="bags">Bags</button>
+        <button data-cat="style">Style</button>
+    </div>
+
+    <button id="cartBtn">
+        🛒 Cart (<span id="cartCount">0</span>)
+    </button>
+
+    <main>
+        <div id="grid"></div>
+    </main>
+
+    <!-- Cart -->
+    <div id="overlay"></div>
+
+    <aside id="drawer">
+
+        <button id="closeCart">✕</button>
+
+        <h2>Shopping Cart</h2>
+
+        <ul id="cartItems"></ul>
+
+        <h3>
+            Total: $<span id="cartTotal">0.00</span>
+        </h3>
+
+        <button id="checkout">Checkout</button>
+
+    </aside>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

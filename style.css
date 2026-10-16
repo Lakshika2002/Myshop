@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+    background: linear-gradient(120deg, #fdeff2, #e8f3f1, #fff4dc, #ece7f6);
+    background-size: 300% 300%;
+    animation: gradientMove 15s ease infinite;
+    color: #222;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* ---------- Buttons ---------- */
+button {
+    padding: 10px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+button:focus-visible {
+    outline: 3px solid #f2c14e;
+    outline-offset: 2px;
+}
+
+/* ---------- Filters ---------- */
+#filters {
+    text-align: center;
+    margin: 20px;
+}
+
+#filters button {
+    background: #e9e9e9;
+    color: #222;
+}
+
+#filters button.active {
+    background: #222;
+    color: white;
+}
+
+/* ---------- Cart button ---------- */
+#cartBtn {
+    float: right;
+    background: #222;
+    color: white;
+}
+
+/* ---------- Product grid ---------- */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 70px;
+    clear: both;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.thumb {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h3 {
+    margin: 0;
+}
+
+.price {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.add {
+    width: 100%;
+    margin: 0;
+    background: #222;
+    color: white;
+}
+
+/* ---------- Cart drawer ---------- */
+#drawer {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 350px;
+    max-width: 100%;
+    height: 100%;
+    background: white;
+    padding: 25px;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s;
+    z-index: 10;
+    overflow-y: auto;
+}
+
+#drawer.open {
+    right: 0;
+}
+
+#closeCart {
+    float: right;
+    background: none;
+    font-size: 20px;
+    margin: 0;
+    padding: 4px 8px;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+}
+
+#overlay.open {
+    display: block;
+}
+
+#cartItems {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#cartItems li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#cartItems li button {
+    background: #eee;
+    padding: 2px 10px;
+    margin: 0 0 0 6px;
+}
+
+.empty {
+    color: #777;
+}
+
+#checkout {
+    width: 100%;
+    margin: 0;
+    background: #222;
+    color: white;
+}
+
+/* ---------- Live background ---------- */
+@keyframes gradientMove {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.bg {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.bg span {
+    position: absolute;
+    bottom: -80px;
+    font-size: 40px;
+    opacity: 0.35;
+    animation: floatUp 18s linear infinite;
+}
+
+.bg span:nth-child(1)  { left: 5%;  animation-duration: 16s; }
+.bg span:nth-child(2)  { left: 15%; animation-duration: 22s; animation-delay: 3s;  font-size: 55px; }
+.bg span:nth-child(3)  { left: 25%; animation-duration: 18s; animation-delay: 6s; }
+.bg span:nth-child(4)  { left: 35%; animation-duration: 24s; animation-delay: 1s;  font-size: 34px; }
+.bg span:nth-child(5)  { left: 45%; animation-duration: 20s; animation-delay: 8s;  font-size: 50px; }
+.bg span:nth-child(6)  { left: 55%; animation-duration: 17s; animation-delay: 4s; }
+.bg span:nth-child(7)  { left: 65%; animation-duration: 23s; animation-delay: 10s; font-size: 60px; }
+.bg span:nth-child(8)  { left: 75%; animation-duration: 19s; animation-delay: 2s; }
+.bg span:nth-child(9)  { left: 85%; animation-duration: 21s; animation-delay: 7s;  font-size: 36px; }
+.bg span:nth-child(10) { left: 92%; animation-duration: 25s; animation-delay: 5s;  font-size: 48px; }
+
+@keyframes floatUp {
+    0%   { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-120vh) rotate(360deg); }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+    body {
+        padding: 16px;
+    }
+
+    #grid {
+        margin-top: 20px;
+    }
+
+    #cartBtn {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/* stop motion for people who prefer less animation */
+@media (prefers-reduced-motion: reduce) {
+    body, .bg span {
+        animation: none;
+    }
+}
