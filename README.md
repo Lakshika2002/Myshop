@@ -16,4 +16,4 @@ A modern and responsive e-commerce web application built using HTML5, CSS3, and 
 Check out the live website here: [Live Demo Link](https://your-username.github.io/Myshop/)
 
 ---
-*Developed by L.P.L.S Rajapaksha
+Developed by L.P.L.S Rajapaksha
